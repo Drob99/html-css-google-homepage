@@ -1,0 +1,211 @@
+/* Asterisk selects everything. Erase all defaults.*/
+* {
+    box-sizing: border-box; /*border contained within the width of the element*/
+    margin: 0; /*Size outside the container */
+    padding: 0; /*Size inside the container*/
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+body {
+    font-size: 0.9rem; /*Default is 1 rem*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+button {
+    cursor: pointer;
+}
+
+.google-header {
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    /*Everything is aligned vertically in header by default.*/
+    display: flex; /*Default for flex display is horizontal aligning.*/
+    justify-content: space-between; /*Layout across the axis*/
+    align-items: center; /*Perpendicular to the axis.*/
+    /*Typically, avoid margin and use padding.*/
+    padding: 1rem;
+    gap: 1rem; /*space inside flex container*/
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.text-link,
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-link:hover,
+footer a:hover {
+    text-decoration: underline;
+}
+
+.nav-container-second .text-link {
+    display: none;
+}
+
+.icon-link {
+    font-size: 1 rem;
+    color: inherit;
+    width: 30px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 100%;
+    display: grid;
+    place-items: center; /* This is only for the grid display, used when we want to center a single item.*/
+}
+
+.icon-link:hover {
+    background: rgb(235, 235, 235);
+}
+.img-button {
+    border: none;
+    background: transparent;
+}
+
+.img-button img {
+    width: 30px;
+    aspect-ratio: 1 / 1; /*Square image*/
+    overflow: hidden; /*handling of overflow from container*/
+    border-radius: 100%;
+}
+
+main {
+    flex: 1;
+    /*Many children do not suit grid. So I will use flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 1rem; /*horizontal vertical*/
+}
+
+.title-text {
+    font-size: 5rem;
+}
+
+.input-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgb(235, 235, 235);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.input-bar:hover,
+.input-bar:focus-within {
+    box-shadow: 0 0 4px 1px rgb(237, 237, 237); /*horizontal offset vertical offset blur spread color*/
+}
+
+
+.input-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.input-bar div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-icon {
+    background: transparent;
+    border: none;
+}
+
+.input-icon:hover {
+    opacity: 0.6;
+}
+
+.button-grid {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-grid button {
+    padding: 0.5rem 1rem; /*vertical horizontal*/
+    border: 1px solid transparent;
+    background-color: rgb(247, 247, 247);
+    border-radius: 0.25rem;
+}
+
+.button-grid button:hover {
+    border: 1px solid slategray;
+}
+
+.language-text,
+.gemini-text {
+    font-size: 0.7rem;
+}
+
+.language-link,
+.gemini-link {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.language-link:hover,
+.gemini-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: rgb(244, 244, 244);
+    font-size: 0.7rem;
+}
+
+/* Only target direct children of footer*/
+footer > div {
+    padding: 1rem;
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* Typically easier to design for mobile first. */
+@media (min-width: 640px) {
+
+    footer {
+        font-size: 0.7rem;
+    }
+
+    .footer-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-container-second .text-link {
+        display: block;
+    }    
+}
